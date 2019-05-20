@@ -1,17 +1,24 @@
-import React from "react"
+import React, { Component, Fragment } from "react"
 import { Link, graphql } from "gatsby"
-
-import Layout from "../components/layout"
+import Context from "../utils/context"
 import SEO from "../components/seo"
 
-class BlogPostTemplate extends React.Component {
+class PostTemplate extends Component {
+  static contextType = Context
+
+  componentDidMount() {
+    const { data } = this.props
+    const postTitle = data.markdownRemark.frontmatter.title
+    this.context.set({ title: postTitle })
+  }
+
   render() {
-    const post = this.props.data.markdownRemark
-    const siteTitle = this.props.data.site.siteMetadata.title
+    const { data } = this.props
+    const post = data.markdownRemark
     const { previous, next } = this.props.pageContext
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+      <Fragment>
         <SEO
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
@@ -51,15 +58,15 @@ class BlogPostTemplate extends React.Component {
             )}
           </li>
         </ul>
-      </Layout>
+      </Fragment>
     )
   }
 }
 
-export default BlogPostTemplate
+export default PostTemplate
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
+  query PostBySlug($slug: String!) {
     site {
       siteMetadata {
         title
