@@ -17,16 +17,31 @@ const StyledHeader = styled.header`
 `
 
 const StyledMain = styled.main`
-  padding-bottom: 50px;
+  padding-bottom: 60px;
   width: 1000px;
 `
 
 const StyledFooter = styled.footer`
   position: absolute;
+  display: flex;
+  justify-content: center;
   bottom: 0;
   margin: 0 auto;
   width: 1000px;
-  height: 50px;
+  height: 60px;
+  svg {
+    z-index: 1;
+    padding: 0 20px 10px;
+    background: black;
+  }
+  .border-footer {
+    position: absolute;
+    border-width: 0 1px 1px;
+    border-style: solid;
+    border-image: linear-gradient(to right, cyan, magenta, yellow) 1;
+    width: 980px;
+    height: 33px;
+  }
 `
 
 export default ({ children }) => (
@@ -37,6 +52,7 @@ export default ({ children }) => (
       </Context.Consumer>
       <StyledMain>{children}</StyledMain>
       <StyledFooter>
+        <div className="border-footer" />
         <Signature />
       </StyledFooter>
     </Layout>
