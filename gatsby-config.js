@@ -6,9 +6,6 @@ module.exports = {
     siteUrl: `https://davidsletten.com/`
   },
   plugins: [
-    `gatsby-plugin-layout`,
-    `gatsby-plugin-sass`,
-    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -23,6 +20,19 @@ module.exports = {
         name: `assets`
       }
     },
+    `gatsby-plugin-layout`,
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-styled-components`,
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /assets/
+        }
+      }
+    },
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -40,16 +50,6 @@ module.exports = {
       }
     },
     {
-      resolve: "gatsby-plugin-react-svg",
-      options: {
-        rule: {
-          include: /assets/
-        }
-      }
-    },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         //trackingId: `ADD YOUR TRACKING ID HERE`,
@@ -63,8 +63,7 @@ module.exports = {
         start_url: `/`,
         background_color: `#000000`,
         theme_color: `#000000`,
-        display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`
+        display: `minimal-ui`
       }
     },
     `gatsby-plugin-offline`,
