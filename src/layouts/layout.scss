@@ -1,5 +1,100 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,300i,500,700&display=swap");
+
+// VARIABLES
+$gutter: 20px;
+// COLOR VARIABLES
+$black: #000000;
+$white: #ffffff;
+$cyan: #00ffff;
+$magenta: #ff00ff;
+$yellow: #ffff00;
+// FONT VARIABLES
+$font: "Raleway", sans-serif;
+$font-bold: 700;
+$font-regular: 500;
+$font-light: 300;
+$font-xl: 48px;
+$font-l: 36px;
+$font-m: 30px;
+$font-s: 24px;
+$font-xs: 18px;
+
+// GLOBAL
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
 body {
   margin: 0;
-  background: black;
-  color: white;
+  background: $black;
+  color: $white;
+  font-family: $font;
+  font-size: $font-xs;
+  font-weight: $font-regular;
+}
+// TYPOGRAPHY
+h1 {
+  // Main Title
+  font-size: $font-xl;
+  font-weight: $font-bold;
+}
+h2 {
+  // Content Title
+  font-size: $font-l;
+  font-weight: $font-light;
+}
+h3 {
+  // Mobile Main Title, Content Summary
+  font-size: $font-l;
+  font-weight: $font-bold;
+}
+h4 {
+  // Pull Quote
+  font-size: $font-m;
+  font-weight: $font-light;
+}
+h5 {
+  // Viewer Title
+  font-size: $font-m;
+  font-weight: $font-bold;
+}
+h6 {
+  // Mobile Content Title, Byline, Datestamp, Page Number
+  font-size: $font-s;
+  font-weight: $font-light;
+}
+strong {
+  font-size: $font-xs;
+  font-weight: $font-bold;
+}
+em {
+  font-size: $font-xs;
+  font-weight: $font-light;
+  font-style: italic;
+}
+a {
+  font-size: $font-xs;
+  font-weight: $font-regular;
+  color: $cyan;
+  text-decoration: underline;
+  &:hover {
+    text-decoration: none;
+  }
+  &:active {
+    color: $yellow;
+    text-decoration: none;
+  }
+  &:visited {
+    color: $magenta;
+  }
+}
+hr {
+  margin: $gutter 0;
+  border-width: 1px 0 0;
+  border-style: solid;
+  border-image: linear-gradient(to right, $cyan, $magenta, $yellow) 1;
 }

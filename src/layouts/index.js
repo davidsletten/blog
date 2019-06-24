@@ -4,6 +4,7 @@ import styled from "styled-components"
 import BackgroundImage from "gatsby-background-image"
 import Context, { ContextProvider } from "../utils/context"
 import "./layout.scss"
+import Navigation from "../components/navigation"
 import Signature from "../../content/assets/signature.svg"
 
 const Layout = styled(BackgroundImage)`
@@ -28,8 +29,12 @@ const StyledHeader = styled.header`
 `
 
 const StyledMain = styled.main`
-  padding-bottom: 60px;
-  width: 1000px;
+  margin: 0 10px;
+  border-width: 0 1px;
+  border-style: solid;
+  border-image: linear-gradient(to right, cyan, magenta, yellow) 1;
+  padding: 0 20px 60px;
+  width: 980px;
 `
 
 const StyledFooter = styled.footer`
@@ -42,7 +47,7 @@ const StyledFooter = styled.footer`
   height: 60px;
   svg {
     z-index: 1;
-    padding: 0 20px 10px;
+    padding: 2px 20px 0;
     background: black;
   }
   .border-footer {
@@ -51,7 +56,7 @@ const StyledFooter = styled.footer`
     border-style: solid;
     border-image: linear-gradient(to right, cyan, magenta, yellow) 1;
     width: 980px;
-    height: 33px;
+    height: 35px;
   }
 `
 
@@ -115,6 +120,7 @@ export default ({ children }) => (
               <StyledHeader>
                 <h1>{data.title}</h1>
               </StyledHeader>
+              <Navigation />
               <StyledMain>{children}</StyledMain>
               <StyledFooter>
                 <div className="border-footer" />
