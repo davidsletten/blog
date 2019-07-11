@@ -35,6 +35,7 @@ const StyledMain = styled.main`
   border-image: linear-gradient(to right, cyan, magenta, yellow) 1;
   padding: 0 20px 60px;
   width: 980px;
+  background-color: rgba(0, 0, 0, 0.7);
 `
 
 const StyledFooter = styled.footer`
