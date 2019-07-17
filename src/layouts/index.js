@@ -46,18 +46,20 @@ const StyledFooter = styled.footer`
   margin: 0 auto;
   width: 1000px;
   height: 60px;
-  svg {
-    z-index: 1;
-    padding: 2px 20px 0;
-    background: black;
-  }
-  .border-footer {
+  background: black;
+  &:before {
+    content: "";
     position: absolute;
     border-width: 0 1px 1px;
     border-style: solid;
     border-image: linear-gradient(to right, cyan, magenta, yellow) 1;
     width: 980px;
     height: 35px;
+  }
+  svg {
+    z-index: 1;
+    padding: 2px 20px 0;
+    background: black;
   }
 `
 
@@ -124,7 +126,6 @@ export default ({ children }) => (
               <Navigation />
               <StyledMain>{children}</StyledMain>
               <StyledFooter>
-                <div className="border-footer" />
                 <Signature />
               </StyledFooter>
             </Layout>
