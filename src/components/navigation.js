@@ -68,6 +68,7 @@ export default class Navigation extends Component {
         >
           <path
             fill="black"
+            fillOpacity="0.7"
             stroke="magenta"
             d="M44 0L87.3013 25V75L44 100L0.69873 75V25L44 0Z"
           />

@@ -9,7 +9,7 @@ class Blog extends Component {
   componentDidMount() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
-    this.context.set({ title: siteTitle, category: "all" })
+    this.context.set({ title: siteTitle, page: "home" })
   }
 
   render() {
