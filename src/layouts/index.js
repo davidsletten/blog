@@ -63,44 +63,16 @@ const StyledFooter = styled.footer`
   }
 `
 
-export const fluidImage = graphql`
-  fragment fluidImage on File {
-    childImageSharp {
-      fluid {
-        ...GatsbyImageSharpFluid
-      }
-    }
-  }
-`
-
 const headerImages = graphql`
   query {
-    adventure: file(relativePath: { eq: "adventure.png" }) {
-      ...fluidImage
-    }
-    all: file(relativePath: { eq: "all.png" }) {
-      ...fluidImage
-    }
-    art: file(relativePath: { eq: "art.png" }) {
-      ...fluidImage
-    }
-    ecology: file(relativePath: { eq: "ecology.png" }) {
-      ...fluidImage
-    }
-    engineering: file(relativePath: { eq: "engineering.png" }) {
-      ...fluidImage
-    }
-    gaming: file(relativePath: { eq: "gaming.png" }) {
-      ...fluidImage
-    }
-    mindfulness: file(relativePath: { eq: "mindfulness.png" }) {
-      ...fluidImage
-    }
-    veganism: file(relativePath: { eq: "veganism.png" }) {
-      ...fluidImage
-    }
-    writing: file(relativePath: { eq: "writing.png" }) {
-      ...fluidImage
+    allImageSharp {
+      edges {
+        node {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   }
 `
@@ -115,9 +87,21 @@ export default ({ children }) => (
             <Layout
               Tag="div"
               fluid={
-                data.category
-                  ? query[data.category].childImageSharp.fluid
-                  : query.all.childImageSharp.fluid
+                data.page
+                  ? query.allImageSharp.edges.find(
+                      image =>
+                        image.node.fluid.src
+                          .split("/")
+                          .pop()
+                          .split(".")[0] === data.page
+                    ).node.fluid
+                  : query.allImageSharp.edges.find(
+                      image =>
+                        image.node.fluid.src
+                          .split("/")
+                          .pop()
+                          .split(".")[0] === "home"
+                    ).node.fluid
               }
             >
               <StyledHeader>

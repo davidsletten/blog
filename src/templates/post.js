@@ -9,7 +9,10 @@ class PostTemplate extends Component {
   componentDidMount() {
     const { data } = this.props
     const postTitle = data.markdownRemark.frontmatter.title
-    this.context.set({ title: postTitle })
+    this.context.set({
+      title: postTitle,
+      page: data.markdownRemark.fields.slug.split("/")[1]
+    })
   }
 
   render() {
@@ -76,6 +79,9 @@ export const pageQuery = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       excerpt(pruneLength: 160)
+      fields {
+        slug
+      }
       html
       frontmatter {
         title
