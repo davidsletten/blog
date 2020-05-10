@@ -75,21 +75,21 @@ export default class Navigation extends Component {
         </svg>
         <svg
           className="boundary"
-          width="980"
-          height="60"
-          viewBox="0 0 980 60"
+          width="700"
+          height="50"
+          viewBox="0 0 700 50"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            d="M589 0H980V60H490.5H0V0H397L490.5 60L589 0Z"
+            d="M304.5 20.4082L269.5 36.2245L210 0H0V50H700V0H497.5L430.5 36.2245L397 20.4082L349.5 48.9796L304.5 20.4082Z"
             fill="black"
-            fillOpacity="0.7"
+            fill-opacity="0.7"
           />
           <path
-            fillRule="evenodd"
-            clipRule="evenodd"
-            d="M0 0H397.241L490.506 58.8417L588.759 0H980V59.4209H979.001V0.982163H589.039L490.493 60L396.948 0.982163H0.998981V59.4209H0V0Z"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M0 0H210.337L269.649 35.796L304.604 20.137L349.508 48.3995L396.905 20.1375L430.37 35.8001L497.166 0H700V50H699.001V1.0101H497.414L430.4 36.9272L396.961 21.2767L349.494 49.5803L304.525 21.2771L269.581 36.9312L210.062 1.0101H0.998573V50H0V0Z"
             fill="url(#gradient)"
           />
           <defs>
@@ -97,7 +97,7 @@ export default class Navigation extends Component {
               id="gradient"
               x1="0"
               y1="0"
-              x2="980"
+              x2="700"
               y2="0"
               gradientUnits="userSpaceOnUse"
             >

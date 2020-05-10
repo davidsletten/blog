@@ -29,12 +29,11 @@ const StyledHeader = styled.header`
 `
 
 const StyledMain = styled.main`
-  margin: 0 10px;
   border-width: 0 1px;
   border-style: solid;
   border-image: linear-gradient(to right, cyan, magenta, yellow) 1;
   padding: 0 20px 60px;
-  width: 980px;
+  width: 700px;
   background-color: rgba(0, 0, 0, 0.7);
 `
 
@@ -44,7 +43,7 @@ const StyledFooter = styled.footer`
   justify-content: center;
   bottom: 0;
   margin: 0 auto;
-  width: 1000px;
+  width: 700px;
   height: 60px;
   background: black;
   &:before {
@@ -53,7 +52,7 @@ const StyledFooter = styled.footer`
     border-width: 0 1px 1px;
     border-style: solid;
     border-image: linear-gradient(to right, cyan, magenta, yellow) 1;
-    width: 980px;
+    width: 700px;
     height: 35px;
   }
   svg {
