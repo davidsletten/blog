@@ -1,6 +1,5 @@
 import React, { Component } from "react"
 import styled from "styled-components"
-import { TimelineMax } from "gsap/TweenMax"
 
 const StyledNav = styled.nav`
   display: flex;
@@ -8,7 +7,7 @@ const StyledNav = styled.nav`
   align-items: center;
   justify-content: flex-end;
   margin-bottom: -30px;
-  height: 160px;
+  height: 140px;
   * {
     z-index: 1;
   }
@@ -30,49 +29,110 @@ const StyledNav = styled.nav`
     position: absolute;
     top: 300px;
     left: 50%;
-    width: 128px;
+    width: 254px;
     height: 1px;
     background: black;
     transform: translateX(-50%);
   }
   .boundary {
     position: relative;
-    top: -30px;
+    top: -25px;
+  }
+  .stage {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 214px;
+    height: 80px;
   }
 `
 
 export default class Navigation extends Component {
-  constructor(props) {
-    super(props)
-    this.hexRef = React.createRef()
-    this.master = new TimelineMax()
-  }
-  componentDidMount() {
-    this.master.add(this.initialize()).play()
-  }
-  initialize = () => {
-    const tl = new TimelineMax()
-    tl.add("initialize")
-    tl.from(this.hexRef.current, 0.5, { height: 0 }, "initialize")
-    return tl
-  }
   render() {
     return (
       <StyledNav>
-        <svg
-          ref={this.hexRef}
-          width="88"
-          height="100"
-          viewBox="0 0 88 100"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            fill="black"
-            fillOpacity="0.7"
-            stroke="magenta"
-            d="M44 0L87.3013 25V75L44 100L0.69873 75V25L44 0Z"
-          />
-        </svg>
+        <div className="stage">
+          <svg
+            width="52"
+            height="60"
+            viewBox="0 0 52 60"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill="black"
+              fill-opacity="0.7"
+              stroke="url(#gradient4)"
+              d="M0.5 15.2887L25.9808 0.57735L51.4615 15.2887V44.7113L25.9808 59.4226L0.5 44.7113V15.2887Z"
+            />
+            <defs>
+              <linearGradient
+                id="gradient4"
+                x1="0"
+                y1="30"
+                x2="52"
+                y2="30"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stopColor="#8D72FF" />
+                <stop offset="1" stopColor="#C937FF" />
+              </linearGradient>
+            </defs>
+          </svg>
+          <svg
+            className="all"
+            width="70"
+            height="80"
+            viewBox="0 0 70 80"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill="black"
+              fill-opacity="0.7"
+              stroke="url(#gradient5)"
+              d="M34.641 0L69.282 20V60L34.641 80L0 60V20L34.641 0Z"
+            />
+            <defs>
+              <linearGradient
+                id="gradient5"
+                x1="0"
+                y1="40"
+                x2="70"
+                y2="40"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stopColor="#DA25FF" />
+                <stop offset="1" stopColor="#FF25DA" />
+              </linearGradient>
+            </defs>
+          </svg>
+          <svg
+            className="ecology"
+            width="52"
+            height="60"
+            viewBox="0 0 52 60"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill="black"
+              fill-opacity="0.7"
+              stroke="url(#gradient6)"
+              d="M0.5 15.2887L25.9808 0.57735L51.4615 15.2887V44.7113L25.9808 59.4226L0.5 44.7113V15.2887Z"
+            />
+            <defs>
+              <linearGradient
+                id="gradient6"
+                x1="0"
+                y1="30"
+                x2="52"
+                y2="30"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stopColor="#FF37C9" />
+                <stop offset="1" stopColor="#FF728D" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
         <svg
           className="boundary"
           width="700"
