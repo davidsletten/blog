@@ -1,5 +1,8 @@
 import React, { Component } from "react"
 import styled from "styled-components"
+import Close from "../../content/assets/close.svg"
+import Previous from "../../content/assets/previous.svg"
+import Next from "../../content/assets/next.svg"
 
 const StyledNav = styled.nav`
   display: flex;
@@ -15,24 +18,29 @@ const StyledNav = styled.nav`
     content: "";
     position: absolute;
     top: 300px;
-    left: 0;
+    right: 50%;
+    transform: translateX(-127px);
     border-top-width: 1px;
     border-right-width: 0;
     border-bottom-width: 0;
     border-left-width: 0;
     border-top-style: solid;
-    border-image: linear-gradient(to right, cyan, magenta, yellow) 1;
-    width: 100%;
+    border-image: linear-gradient(to right, cyan, #8d72ff) 1;
+    width: 50%;
   }
   &:after {
     content: "";
     position: absolute;
     top: 300px;
     left: 50%;
-    width: 254px;
-    height: 1px;
-    background: black;
-    transform: translateX(-50%);
+    transform: translateX(127px);
+    border-top-width: 1px;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    border-top-style: solid;
+    border-image: linear-gradient(to right, #ff728d, yellow) 1;
+    width: 50%;
   }
   .boundary {
     position: relative;
@@ -64,6 +72,7 @@ export default class Navigation extends Component {
               stroke="url(#gradient4)"
               d="M0.5 15.2887L25.9808 0.57735L51.4615 15.2887V44.7113L25.9808 59.4226L0.5 44.7113V15.2887Z"
             />
+            <Previous x="5" y="5" />
             <defs>
               <linearGradient
                 id="gradient4"
@@ -79,7 +88,6 @@ export default class Navigation extends Component {
             </defs>
           </svg>
           <svg
-            className="all"
             width="70"
             height="80"
             viewBox="0 0 70 80"
@@ -91,6 +99,7 @@ export default class Navigation extends Component {
               stroke="url(#gradient5)"
               d="M34.641 0L69.282 20V60L34.641 80L0 60V20L34.641 0Z"
             />
+            <Close x="5" y="5" />
             <defs>
               <linearGradient
                 id="gradient5"
@@ -106,7 +115,6 @@ export default class Navigation extends Component {
             </defs>
           </svg>
           <svg
-            className="ecology"
             width="52"
             height="60"
             viewBox="0 0 52 60"
@@ -118,6 +126,7 @@ export default class Navigation extends Component {
               stroke="url(#gradient6)"
               d="M0.5 15.2887L25.9808 0.57735L51.4615 15.2887V44.7113L25.9808 59.4226L0.5 44.7113V15.2887Z"
             />
+            <Next x="5" y="5" />
             <defs>
               <linearGradient
                 id="gradient6"
