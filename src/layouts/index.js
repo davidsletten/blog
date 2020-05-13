@@ -106,7 +106,7 @@ export default ({ children }) => (
               <StyledHeader>
                 <h1>{data.title}</h1>
               </StyledHeader>
-              <Navigation />
+              <Navigation page={data.page} />
               <StyledMain>{children}</StyledMain>
               <StyledFooter>
                 <Signature />

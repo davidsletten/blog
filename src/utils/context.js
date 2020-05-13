@@ -3,7 +3,9 @@ import React, { Component } from "react"
 const defaultContextValue = {
   data: {
     title: "",
-    page: ""
+    page: "",
+    previous: undefined,
+    next: undefined
   },
   set: () => {}
 }

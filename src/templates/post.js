@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import Context from "../utils/context"
 import SEO from "../components/seo"
 
@@ -8,17 +8,19 @@ class PostTemplate extends Component {
 
   componentDidMount() {
     const { data } = this.props
+    const { previous, next } = this.props.pageContext
     const postTitle = data.markdownRemark.frontmatter.title
     this.context.set({
       title: postTitle,
-      page: data.markdownRemark.fields.slug.split("/")[1]
+      page: data.markdownRemark.fields.slug.split("/")[1],
+      previous,
+      next
     })
   }
 
   render() {
     const { data } = this.props
     const post = data.markdownRemark
-    const { previous, next } = this.props.pageContext
 
     return (
       <Fragment>
@@ -35,32 +37,6 @@ class PostTemplate extends Component {
           {post.frontmatter.date}
         </p>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr />
-
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0
-          }}
-        >
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
       </Fragment>
     )
   }
