@@ -3,12 +3,12 @@ import Context from "../utils/context"
 import { navigate } from "gatsby"
 import styled from "styled-components"
 import Close from "../../content/assets/close.svg"
-import Previous from "../../content/assets/previous.svg"
-import Next from "../../content/assets/next.svg"
 import Boundary from "../../content/assets/boundary.svg"
 import LeftHex from "./left-hex"
 import MiddleHex from "./middle-hex"
 import RightHex from "./right-hex"
+import Previous from "./previous"
+import Next from "./next"
 
 const StyledNav = styled.nav`
   display: flex;
@@ -79,30 +79,42 @@ export default class Navigation extends Component {
             <div className="stage">
               <button
                 title="Previous"
-                className={data.previous && "active"}
+                className={data.previous ? "active" : ""}
                 onClick={() =>
                   data.previous ? navigate(data.previous.fields.slug) : false
                 }
               >
-                <LeftHex>{data.previous && <Previous x="5" y="5" />}</LeftHex>
+                <LeftHex>
+                  {page !== "home" && (
+                    <Previous
+                      x="5"
+                      y="5"
+                      fill={data.previous ? "white" : "#414141"}
+                    />
+                  )}
+                </LeftHex>
               </button>
               <button
                 title="Home"
-                className={page !== "home" && "active"}
+                className={page !== "home" ? "active" : ""}
                 onClick={() => (page !== "home" ? navigate("/") : false)}
               >
                 <MiddleHex>
-                  {page !== "home" && <Close x="5" y="5" />}
+                  {page !== "home" && <Close x="5" y="5" fill="#414141" />}
                 </MiddleHex>
               </button>
               <button
                 title="Next"
-                className={data.next && "active"}
+                className={data.next ? "active" : ""}
                 onClick={() =>
                   data.next ? navigate(data.next.fields.slug) : false
                 }
               >
-                <RightHex>{data.next && <Next x="5" y="5" />}</RightHex>
+                <RightHex>
+                  {page !== "home" && (
+                    <Next x="5" y="5" fill={data.next ? "white" : "#414141"} />
+                  )}
+                </RightHex>
               </button>
             </div>
             <Boundary />
