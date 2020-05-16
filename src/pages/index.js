@@ -1,7 +1,47 @@
 import React, { Component, Fragment } from "react"
-import { Link, graphql } from "gatsby"
+import { graphql, navigate } from "gatsby"
+import BackgroundImage from "gatsby-background-image"
+import styled from "styled-components"
 import Context from "../utils/context"
 import SEO from "../components/seo"
+
+const StyledButton = styled.button`
+  cursor: pointer;
+  outline: none;
+  margin-bottom: 20px;
+  border-width: 1px;
+  border-style: solid;
+  border-image: linear-gradient(to right, cyan, magenta, yellow) 1;
+  padding: 0;
+  background: transparent;
+`
+
+const Post = styled(BackgroundImage)`
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background-position: top center;
+  background-size: cover;
+  width: 100%;
+  h3 {
+    margin: 0;
+    color: white;
+    text-align: left;
+    text-shadow: 2px 2px 2px #000000;
+  }
+  em {
+    display: inline-block;
+    text-align: left;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 2px #000000;
+  }
+  p {
+    margin-bottom: 0;
+    color: white;
+    text-align: right;
+    text-shadow: 2px 2px 2px #000000;
+  }
+`
 
 class Blog extends Component {
   static contextType = Context
@@ -30,19 +70,29 @@ class Blog extends Component {
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
-            <div key={node.fields.slug}>
-              <h3>
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt
-                }}
-              />
-            </div>
+            <StyledButton onClick={() => navigate(node.fields.slug)}>
+              <Post
+                key={node.fields.slug}
+                Tag="div"
+                fluid={
+                  data.allImageSharp.edges.find(
+                    image =>
+                      image.node.fluid.src
+                        .split("/")
+                        .pop()
+                        .split(".")[0] === node.fields.slug.split("/")[1]
+                  ).node.fluid
+                }
+              >
+                <h3>{title}</h3>
+                <em>{node.frontmatter.date}</em>
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: node.frontmatter.description || node.excerpt
+                  }}
+                />
+              </Post>
+            </StyledButton>
           )
         })}
       </Fragment>
@@ -57,6 +107,15 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+      }
+    }
+    allImageSharp {
+      edges {
+        node {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
       }
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {

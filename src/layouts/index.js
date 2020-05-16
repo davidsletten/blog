@@ -29,10 +29,12 @@ const StyledHeader = styled.header`
 `
 
 const StyledMain = styled.main`
+  display: flex;
+  flex-direction: column;
   border-width: 0 1px;
   border-style: solid;
   border-image: linear-gradient(to right, cyan, magenta, yellow) 1;
-  padding: 0 20px 60px;
+  padding: 20px 20px 60px;
   width: 700px;
   background-color: rgba(0, 0, 0, 0.7);
 `

@@ -54,7 +54,7 @@ const StyledNav = styled.nav`
   }
   .boundary {
     position: relative;
-    top: -25px;
+    top: -30px;
   }
   button {
     z-index: 1;
