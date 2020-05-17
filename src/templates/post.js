@@ -28,10 +28,10 @@ class PostTemplate extends Component {
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
         />
-        <h1>{post.frontmatter.title}</h1>
         <p
           style={{
-            display: `block`
+            display: `block`,
+            marginTop: 0
           }}
         >
           {post.frontmatter.date}

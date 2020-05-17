@@ -70,9 +70,11 @@ class Blog extends Component {
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
-            <StyledButton onClick={() => navigate(node.fields.slug)}>
+            <StyledButton
+              key={node.fields.slug}
+              onClick={() => navigate(node.fields.slug)}
+            >
               <Post
-                key={node.fields.slug}
                 Tag="div"
                 fluid={
                   data.allImageSharp.edges.find(
