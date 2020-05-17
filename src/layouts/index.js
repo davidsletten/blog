@@ -1,13 +1,14 @@
-import React from "react"
+import React, { Component } from "react"
 import { StaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import BackgroundImage from "gatsby-background-image"
 import Context, { ContextProvider } from "../utils/context"
 import "./layout.scss"
+import About from "../components/about"
 import Navigation from "../components/navigation"
 import Signature from "../../content/assets/signature.svg"
 
-const Layout = styled(BackgroundImage)`
+const Background = styled(BackgroundImage)`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -57,11 +58,16 @@ const StyledFooter = styled.footer`
     width: 700px;
     height: 35px;
   }
-  svg {
-    z-index: 1;
-    padding: 2px 20px 0;
-    background: black;
-  }
+`
+
+const StyledButton = styled.button`
+  z-index: 1;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  padding: 0 20px;
+  height: 49px;
+  background: black;
 `
 
 const headerImages = graphql`
@@ -78,45 +84,62 @@ const headerImages = graphql`
   }
 `
 
-export default ({ children }) => (
-  <ContextProvider>
-    <Context.Consumer>
-      {({ data }) => (
-        <StaticQuery
-          query={headerImages}
-          render={query => (
-            <Layout
-              Tag="div"
-              fluid={
-                data.page
-                  ? query.allImageSharp.edges.find(
-                      image =>
-                        image.node.fluid.src
-                          .split("/")
-                          .pop()
-                          .split(".")[0] === data.page
-                    ).node.fluid
-                  : query.allImageSharp.edges.find(
-                      image =>
-                        image.node.fluid.src
-                          .split("/")
-                          .pop()
-                          .split(".")[0] === "home"
-                    ).node.fluid
-              }
-            >
-              <StyledHeader>
-                <h1>{data.title}</h1>
-              </StyledHeader>
-              <Navigation page={data.page} />
-              <StyledMain>{children}</StyledMain>
-              <StyledFooter>
-                <Signature />
-              </StyledFooter>
-            </Layout>
+export default class Layout extends Component {
+  static contextType = Context
+
+  render() {
+    const { children } = this.props
+
+    return (
+      <ContextProvider>
+        <Context.Consumer>
+          {({ data, set }) => (
+            <StaticQuery
+              query={headerImages}
+              render={query => (
+                <Background
+                  Tag="div"
+                  fluid={
+                    data.page
+                      ? query.allImageSharp.edges.find(
+                          image =>
+                            image.node.fluid.src
+                              .split("/")
+                              .pop()
+                              .split(".")[0] === data.page
+                        ).node.fluid
+                      : query.allImageSharp.edges.find(
+                          image =>
+                            image.node.fluid.src
+                              .split("/")
+                              .pop()
+                              .split(".")[0] === "home"
+                        ).node.fluid
+                  }
+                >
+                  <About show={data.about} />
+                  <StyledHeader>
+                    <h1>{data.title}</h1>
+                  </StyledHeader>
+                  <Navigation page={data.page} />
+                  <StyledMain>{children}</StyledMain>
+                  <StyledFooter>
+                    <StyledButton
+                      onClick={() =>
+                        set({
+                          about: true
+                        })
+                      }
+                    >
+                      <Signature />
+                    </StyledButton>
+                  </StyledFooter>
+                </Background>
+              )}
+            />
           )}
-        />
-      )}
-    </Context.Consumer>
-  </ContextProvider>
-)
+        </Context.Consumer>
+      </ContextProvider>
+    )
+  }
+}

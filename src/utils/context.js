@@ -5,7 +5,8 @@ const defaultContextValue = {
     title: "",
     page: "",
     previous: undefined,
-    next: undefined
+    next: undefined,
+    about: false
   },
   set: () => {}
 }

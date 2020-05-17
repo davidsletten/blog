@@ -43,7 +43,7 @@ const Post = styled(BackgroundImage)`
   }
 `
 
-class Blog extends Component {
+export default class Blog extends Component {
   static contextType = Context
 
   componentDidMount() {
@@ -101,8 +101,6 @@ class Blog extends Component {
     )
   }
 }
-
-export default Blog
 
 export const pageQuery = graphql`
   query {

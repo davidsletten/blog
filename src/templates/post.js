@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import Context from "../utils/context"
 import SEO from "../components/seo"
 
-class PostTemplate extends Component {
+export default class PostTemplate extends Component {
   static contextType = Context
 
   componentDidMount() {
@@ -41,8 +41,6 @@ class PostTemplate extends Component {
     )
   }
 }
-
-export default PostTemplate
 
 export const pageQuery = graphql`
   query PostBySlug($slug: String!) {
