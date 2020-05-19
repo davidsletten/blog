@@ -126,6 +126,7 @@ export default class Layout extends Component {
                   <StyledMain>{children}</StyledMain>
                   <StyledFooter>
                     <StyledButton
+                      title="About Me"
                       onClick={() =>
                         set({
                           about: true
