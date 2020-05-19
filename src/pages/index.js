@@ -90,7 +90,7 @@ export default class Blog extends Component {
                 <em>{node.frontmatter.date}</em>
                 <p
                   dangerouslySetInnerHTML={{
-                    __html: node.frontmatter.description || node.excerpt
+                    __html: node.excerpt
                   }}
                 />
               </Post>

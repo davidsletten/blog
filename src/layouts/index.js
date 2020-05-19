@@ -37,6 +37,7 @@ const StyledMain = styled.main`
   border-image: linear-gradient(to right, cyan, magenta, yellow) 1;
   padding: 20px 20px 60px;
   width: 700px;
+  min-height: 60vh;
   background-color: rgba(0, 0, 0, 0.7);
 `
 
