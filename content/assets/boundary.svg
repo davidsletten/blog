@@ -1,34 +1,10 @@
-<svg
-  className="boundary"
-  width="700"
-  height="50"
-  viewBox="0 0 700 50"
-  fill="none"
-  xmlns="http://www.w3.org/2000/svg"
->
-  <path
-    d="M304.5 20.4082L269.5 36.2245L210 0H0V50H700V0H497.5L430.5 36.2245L397 20.4082L349.5 48.9796L304.5 20.4082Z"
-    fill="black"
-    fillOpacity="0.7"
-  />
-  <path
-    fillRule="evenodd"
-    clipRule="evenodd"
-    d="M0 0H210.337L269.649 35.796L304.604 20.137L349.508 48.3995L396.905 20.1375L430.37 35.8001L497.166 0H700V50H699.001V1.0101H497.414L430.4 36.9272L396.961 21.2767L349.494 49.5803L304.525 21.2771L269.581 36.9312L210.062 1.0101H0.998573V50H0V0Z"
-    fill="url(#gradient)"
-  />
-  <defs>
-    <linearGradient
-      id="gradient"
-      x1="0"
-      y1="0"
-      x2="700"
-      y2="0"
-      gradientUnits="userSpaceOnUse"
-    >
-      <stop stopColor="#00FFFF" />
-      <stop offset="0.5" stopColor="#FF00FF" />
-      <stop offset="1" stopColor="#FFFF00" />
-    </linearGradient>
-  </defs>
+<svg width="288" height="50" viewBox="0 0 288 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M99 20L63 36L0 0V50H288V0L225 36L189 20L144 49L99 20Z" fill="black" fill-opacity="0.7"/>
+<path d="M0.0621033 0L63 36L99 20L144 49L189 20L225 36L288 0V1L225 37L189 21L144 50L99 21L63 37L0.0621033 1V0Z" fill="url(#boundary_fill)"/>
+<defs>
+<linearGradient id="boundary_fill" x1="-0.000107258" y1="-4.76803e-10" x2="287.499" y2="-3.62848e-06" gradientUnits="userSpaceOnUse">
+<stop stop-color="#B54AFF"/>
+<stop offset="1" stop-color="#FF4CB4"/>
+</linearGradient>
+</defs>
 </svg>

@@ -16,11 +16,11 @@ const StyledNav = styled.nav`
   align-items: center;
   justify-content: flex-end;
   margin-bottom: -30px;
-  height: 140px;
+  height: 130px;
   &:before {
     content: "";
     position: absolute;
-    top: 300px;
+    top: 290px;
     right: 50%;
     transform: translateX(-127px);
     border-top-width: 1px;
@@ -34,7 +34,7 @@ const StyledNav = styled.nav`
   &:after {
     content: "";
     position: absolute;
-    top: 300px;
+    top: 290px;
     left: 50%;
     transform: translateX(127px);
     border-top-width: 1px;
@@ -117,7 +117,7 @@ export default class Navigation extends Component {
                 </RightHex>
               </button>
             </div>
-            <Boundary />
+            <Boundary className="boundary" />
           </StyledNav>
         )}
       </Context.Consumer>

@@ -1,7 +1,12 @@
 import React, { Component, Fragment } from "react"
 import { graphql } from "gatsby"
+import styled from "styled-components"
 import Context from "../utils/context"
 import SEO from "../components/seo"
+
+const DateStamp = styled.h6`
+  margin: 0 0 20px;
+`
 
 export default class PostTemplate extends Component {
   static contextType = Context
@@ -28,14 +33,7 @@ export default class PostTemplate extends Component {
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
         />
-        <p
-          style={{
-            display: `block`,
-            marginTop: 0
-          }}
-        >
-          {post.frontmatter.date}
-        </p>
+        <DateStamp>{post.frontmatter.date}</DateStamp>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </Fragment>
     )
@@ -59,7 +57,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "MM.DD.YY")
         description
       }
     }
