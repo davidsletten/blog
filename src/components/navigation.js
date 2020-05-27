@@ -16,6 +16,8 @@ const StyledNav = styled.nav`
   align-items: center;
   justify-content: flex-end;
   margin-bottom: -30px;
+  width: 95%;
+  max-width: 700px;
   height: 130px;
   &:before {
     content: "";
@@ -55,6 +57,10 @@ const StyledNav = styled.nav`
   .boundary {
     position: relative;
     top: -30px;
+    border-left: 1px solid cyan;
+    border-right: 1px solid yellow;
+    width: 100%;
+    max-width: 700px;
   }
   button {
     z-index: 1;

@@ -1,10 +1,41 @@
-<svg width="288" height="50" viewBox="0 0 288 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M99 20L63 36L0 0V50H288V0L225 36L189 20L144 49L99 20Z" fill="black" fill-opacity="0.7"/>
-<path d="M0.0621033 0L63 36L99 20L144 49L189 20L225 36L288 0V1L225 37L189 21L144 50L99 21L63 37L0.0621033 1V0Z" fill="url(#boundary_fill)"/>
-<defs>
-<linearGradient id="boundary_fill" x1="-0.000107258" y1="-4.76803e-10" x2="287.499" y2="-3.62848e-06" gradientUnits="userSpaceOnUse">
-<stop stop-color="#B54AFF"/>
-<stop offset="1" stop-color="#FF4CB4"/>
-</linearGradient>
-</defs>
+<svg
+  preserveAspectRatio="xMidYMid slice"
+  height="50"
+  viewBox="0 0 700 50"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M305 20L269 36L206 0H0V50H700V0H494L431 36L395 20L350 49L305 20Z"
+    fill="black"
+    fill-opacity="0.7"
+  />
+  <path
+    d="
+      M0 0.5
+      H206
+      L269 36.5
+      L305 20.5
+      L350 49.5
+      L395 20.5
+      L431 36.5
+      L494 0.5
+      H700
+    "
+    stroke="url(#boundary_fill)"
+  />
+  <defs>
+    <linearGradient
+      id="boundary_fill"
+      x1="0"
+      y1="0.5"
+      x2="700"
+      y2="0.5"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop offset="0.2" stopColor="#00FFFF" />
+      <stop offset="0.5" stopColor="#FF00FF" />
+      <stop offset="0.8" stopColor="#FFFF00" />
+    </linearGradient>
+  </defs>
 </svg>
