@@ -23,7 +23,7 @@ const Post = styled(BackgroundImage)`
   background-position: top center;
   background-size: cover;
   width: 100%;
-  h3 {
+  h2 {
     margin: 0;
     color: white;
     text-align: left;
@@ -86,7 +86,7 @@ export default class Blog extends Component {
                   ).node.fluid
                 }
               >
-                <h3>{title}</h3>
+                <h2>{title}</h2>
                 <em>{node.frontmatter.date}</em>
                 <p
                   dangerouslySetInnerHTML={{

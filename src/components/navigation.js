@@ -11,16 +11,19 @@ import Previous from "./previous"
 import Next from "./next"
 
 const StyledNav = styled.nav`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
   margin-bottom: -30px;
-  height: 140px;
+  width: 95%;
+  max-width: 700px;
+  height: 130px;
   &:before {
     content: "";
     position: absolute;
-    top: 300px;
+    top: 40px;
     right: 50%;
     transform: translateX(-127px);
     border-top-width: 1px;
@@ -34,7 +37,7 @@ const StyledNav = styled.nav`
   &:after {
     content: "";
     position: absolute;
-    top: 300px;
+    top: 40px;
     left: 50%;
     transform: translateX(127px);
     border-top-width: 1px;
@@ -55,6 +58,10 @@ const StyledNav = styled.nav`
   .boundary {
     position: relative;
     top: -30px;
+    border-left: 1px solid cyan;
+    border-right: 1px solid yellow;
+    width: 100%;
+    max-width: 700px;
   }
   button {
     z-index: 1;
@@ -117,7 +124,7 @@ export default class Navigation extends Component {
                 </RightHex>
               </button>
             </div>
-            <Boundary />
+            <Boundary className="boundary" />
           </StyledNav>
         )}
       </Context.Consumer>
