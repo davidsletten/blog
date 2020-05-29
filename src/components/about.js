@@ -36,7 +36,8 @@ const StyledModal = styled.div`
     border-style: solid;
     border-image: linear-gradient(to right, cyan, magenta, yellow) 1;
     padding: 40px 20px 20px;
-    width: 700px;
+    max-width: 700px;
+    width: 95%;
     height: 85vh;
     overflow: auto;
     background: rgba(0, 0, 0, 0.7);
