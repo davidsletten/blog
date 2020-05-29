@@ -24,8 +24,12 @@ const StyledHeader = styled.header`
   align-items: center;
   width: 100%;
   height: 250px;
+  @media (max-width: 768px) {
+    height: 150px;
+  }
   h1 {
     margin: 0;
+    text-align: center;
   }
 `
 
@@ -40,6 +44,9 @@ const StyledMain = styled.main`
   max-width: 700px;
   min-height: 60vh;
   background-color: rgba(0, 0, 0, 0.7);
+  @media (max-width: 768px) {
+    min-height: 70vh;
+  }
 `
 
 const StyledFooter = styled.footer`
@@ -128,7 +135,7 @@ export default class Layout extends Component {
                   <StyledMain>{children}</StyledMain>
                   <StyledFooter>
                     <StyledButton
-                      title="About Me"
+                      title="About David Sletten"
                       onClick={() =>
                         set({
                           about: true

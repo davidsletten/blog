@@ -18,6 +18,7 @@ $font-l: 36px;
 $font-m: 30px;
 $font-s: 24px;
 $font-xs: 18px;
+$font-xxs: 16px;
 
 // GLOBAL
 html {
@@ -35,36 +36,30 @@ button {
   color: $white;
   font-family: $font;
   font-size: $font-xs;
-  font-weight: $font-regular;
+  font-weight: $font-light;
+  @media (max-width: 768px) {
+    font-size: $font-xxs;
+  }
 }
 // TYPOGRAPHY
 h1 {
   // Main Title
   font-size: $font-xl;
   font-weight: $font-bold;
+  @media (max-width: 768px) {
+    font-size: $font-l;
+  }
 }
 h2 {
   // Content Title
   font-size: $font-l;
-  font-weight: $font-light;
-}
-h3 {
-  // Mobile Main Title, Content Summary
-  font-size: $font-l;
   font-weight: $font-bold;
-}
-h4 {
-  // Pull Quote
-  font-size: $font-m;
-  font-weight: $font-light;
-}
-h5 {
-  // Viewer Title
-  font-size: $font-m;
-  font-weight: $font-bold;
+  @media (max-width: 768px) {
+    font-size: $font-m;
+  }
 }
 h6 {
-  // Mobile Content Title, Byline, Datestamp, Page Number
+  // Datestamp
   font-size: $font-s;
   font-weight: $font-light;
 }
@@ -72,17 +67,12 @@ p {
   margin: $gutter 0;
 }
 strong {
-  font-size: $font-xs;
   font-weight: $font-bold;
 }
 em {
-  font-size: $font-xs;
-  font-weight: $font-light;
   font-style: italic;
 }
 a {
-  font-size: $font-xs;
-  font-weight: $font-regular;
   color: $cyan;
   text-decoration: underline;
   &:hover {

@@ -11,6 +11,7 @@ import Previous from "./previous"
 import Next from "./next"
 
 const StyledNav = styled.nav`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,7 +23,7 @@ const StyledNav = styled.nav`
   &:before {
     content: "";
     position: absolute;
-    top: 290px;
+    top: 40px;
     right: 50%;
     transform: translateX(-127px);
     border-top-width: 1px;
@@ -36,7 +37,7 @@ const StyledNav = styled.nav`
   &:after {
     content: "";
     position: absolute;
-    top: 290px;
+    top: 40px;
     left: 50%;
     transform: translateX(127px);
     border-top-width: 1px;
