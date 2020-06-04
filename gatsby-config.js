@@ -49,23 +49,6 @@ module.exports = {
         ]
       }
     },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
-      }
-    },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `David Sletten's Blog`,
-        short_name: `DavidSletten`,
-        start_url: `/`,
-        background_color: `#000000`,
-        theme_color: `#000000`,
-        display: `minimal-ui`
-      }
-    },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`
   ]

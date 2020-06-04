@@ -11,7 +11,6 @@ import Previous from "./previous"
 import Next from "./next"
 
 const StyledNav = styled.nav`
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,7 +22,7 @@ const StyledNav = styled.nav`
   &:before {
     content: "";
     position: absolute;
-    top: 40px;
+    top: 290px;
     right: 50%;
     transform: translateX(-127px);
     border-top-width: 1px;
@@ -33,11 +32,18 @@ const StyledNav = styled.nav`
     border-top-style: solid;
     border-image: linear-gradient(to right, cyan, #8d72ff) 1;
     width: 50%;
+    @media (max-width: 768px) {
+      top: 190px;
+      width: 33%;
+    }
+    @media (max-width: 400px) {
+      width: 20%;
+    }
   }
   &:after {
     content: "";
     position: absolute;
-    top: 40px;
+    top: 290px;
     left: 50%;
     transform: translateX(127px);
     border-top-width: 1px;
@@ -47,6 +53,13 @@ const StyledNav = styled.nav`
     border-top-style: solid;
     border-image: linear-gradient(to right, #ff728d, yellow) 1;
     width: 50%;
+    @media (max-width: 768px) {
+      top: 190px;
+      width: 33%;
+    }
+    @media (max-width: 400px) {
+      width: 20%;
+    }
   }
   .stage {
     display: flex;

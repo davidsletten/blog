@@ -63,7 +63,13 @@ export default class Navigation extends Component {
       return (
         <Context.Consumer>
           {({ set }) => (
-            <StyledModal>
+            <StyledModal
+              onClick={() =>
+                set({
+                  about: false
+                })
+              }
+            >
               <h5>About David Sletten</h5>
               <button
                 title="Close"
@@ -77,7 +83,7 @@ export default class Navigation extends Component {
                   <Close width="42px" height="49px" x="5" y="5" />
                 </Hex>
               </button>
-              <div>
+              <div onClick={e => e.stopPropagation()}>
                 <StaticQuery
                   query={selfImage}
                   render={query => (
