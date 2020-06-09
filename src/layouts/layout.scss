@@ -97,3 +97,8 @@ hr {
   border-style: solid;
   border-image: linear-gradient(to right, $cyan, $magenta, $yellow) 1;
 }
+img {
+  border-width: 1px;
+  border-style: solid;
+  border-image: linear-gradient(to right, cyan, magenta, yellow) 1;
+}

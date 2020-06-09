@@ -16,6 +16,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        path: `${__dirname}/content/about`,
+        name: `about`
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         path: `${__dirname}/content/assets`,
         name: `assets`
       }
@@ -38,10 +45,7 @@ module.exports = {
       options: {
         plugins: [
           {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 590
-            }
+            resolve: `gatsby-remark-images`
           },
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,

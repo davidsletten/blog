@@ -42,12 +42,6 @@ export default class PostTemplate extends Component {
 
 export const pageQuery = graphql`
   query PostBySlug($slug: String!) {
-    site {
-      siteMetadata {
-        title
-        author
-      }
-    }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       excerpt(pruneLength: 160)
