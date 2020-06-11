@@ -1,7 +1,8 @@
-import React, { Component } from "react"
+import React, { Component, Fragment } from "react"
 import Context from "../utils/context"
 import { StaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
+import Img from "gatsby-image"
 import Hex from "./hex"
 import Close from "../../content/assets/close.svg"
 
@@ -29,7 +30,7 @@ const StyledModal = styled.div`
     padding: 0;
     background: transparent;
   }
-  div {
+  .frame {
     margin: 0 auto;
     border-width: 1px;
     border-style: solid;
@@ -40,11 +41,22 @@ const StyledModal = styled.div`
     height: 85vh;
     overflow: auto;
     background: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    div {
+      text-align: left;
+    }
   }
 `
 
 const aboutQuery = graphql`
   query {
+    file(relativePath: { eq: "self.jpg" }) {
+      childImageSharp {
+        fixed(width: 300, height: 300) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
     markdownRemark(fileAbsolutePath: { regex: "/about/" }) {
       html
       frontmatter {
@@ -85,12 +97,17 @@ export default class Navigation extends Component {
               <StaticQuery
                 query={aboutQuery}
                 render={query => (
-                  <div
-                    onClick={e => e.stopPropagation()}
-                    dangerouslySetInnerHTML={{
-                      __html: query.markdownRemark.html
-                    }}
-                  />
+                  <div className="frame" onClick={e => e.stopPropagation()}>
+                    <Img
+                      fixed={query.file.childImageSharp.fixed}
+                      alt="Portrait of David Sletten"
+                    />
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: query.markdownRemark.html
+                      }}
+                    />
+                  </div>
                 )}
               />
             </StyledModal>
