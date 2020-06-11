@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react"
+import React, { Component } from "react"
 import Context from "../utils/context"
 import { StaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
