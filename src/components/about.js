@@ -42,6 +42,9 @@ const StyledModal = styled.div`
     overflow: auto;
     background: rgba(0, 0, 0, 0.7);
     text-align: center;
+    @media (max-width: 768px) {
+      height: 80vh;
+    }
     div {
       text-align: left;
     }
