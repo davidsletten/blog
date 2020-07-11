@@ -16,7 +16,7 @@ A couple years later I had tried enough and failed enough to feel confident. I a
 
 ![Brewing Brimstone](./20200711-process.jpg)
 
-The maple syrup hits the tongue with an immediate sweet note that is fallowed forthright by the heavy hit of habanero. This batch was brilliant. A wonderful success that received praise from everyone who tasted it. I managed to brew fifty bottles and gave them away to friends and family.
+The maple syrup hits the tongue with a sweet note that is followed immediately by the heavy hit of habanero. This batch was brilliant. A wonderful success that received praise from everyone who tasted it. I managed to brew fifty bottles and gave them away to friends and family.
 
 ![Bottling Brimstone](./20200711-bottling.jpg)
 
