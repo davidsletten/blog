@@ -8,7 +8,7 @@ Perfected through years of failure, Brimstone Pepper Sauce is a project that cap
 
 ![Habanero Harvest](./20200711-garden.jpg)
 
-2018 was the year that Brimstone grew out of the amateur attempts of the first few years that I brewed pepper sauce. My first attempt went comically wrong when I chose coconut oil to sauté my peppers in and then, because coconut oil solidifies when it cools, my sauce hardened within the bottles… Disaster. I salvaged by mixing it down with an another type of oil but it ended up a bit lumpy, not the best consistency for a sauce.
+2018 was the year that Brimstone grew out of the amateur attempts of the first few years that I brewed pepper sauce. My first attempt went comically wrong when I chose coconut oil to sauté my peppers in and then, because coconut oil solidifies when it cools, my sauce hardened within the bottles… Disaster. I salvaged by mixing it down with another type of oil but it ended up a bit lumpy, not the best consistency for a sauce.
 
 ![Brimstone Ingredients](./20200711-ingredients.jpg)
 
