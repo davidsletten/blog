@@ -8,7 +8,7 @@ Perfected through years of failure, Brimstone Pepper Sauce is a project that cap
 
 ![Habanero Harvest](./20200711-garden.jpg)
 
-2018 was the year that Brimstone grew out of the amateur attempts of the first few years that I brewed pepper sauce. My first attempt went comically wrong when I chose coconut oil to sauté my peppers in and then, because coconut oil solidifies when it cools, my sauce hardened within the bottles… Disaster. I salvaged by mixing it down with an another type of oil but it ended up a bit lumpy, not the best consistency for a sauce.
+2018 was the year that Brimstone grew out of the amateur attempts of the first few years that I brewed pepper sauce. My first attempt went comically wrong when I chose coconut oil to sauté my peppers in and then, because coconut oil solidifies when it cools, my sauce hardened within the bottles… Disaster. I salvaged by mixing it down with another type of oil but it ended up a bit lumpy, not the best consistency for a sauce.
 
 ![Brimstone Ingredients](./20200711-ingredients.jpg)
 
@@ -16,7 +16,7 @@ A couple years later I had tried enough and failed enough to feel confident. I a
 
 ![Brewing Brimstone](./20200711-process.jpg)
 
-The maple syrup hits the tongue with an immediate sweet note that is fallowed forthright by the heavy hit of habanero. This batch was brilliant. A wonderful success that received praise from everyone who tasted it. I managed to brew fifty bottles and gave them away to friends and family.
+The maple syrup hits the tongue with a sweet note that is followed immediately by the heavy hit of habanero. This batch was brilliant. A wonderful success that received praise from everyone who tasted it. I managed to brew fifty bottles and gave them away to friends and family.
 
 ![Bottling Brimstone](./20200711-bottling.jpg)
 
