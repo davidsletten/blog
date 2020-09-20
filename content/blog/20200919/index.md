@@ -1,7 +1,7 @@
 ---
 title: Stella Nauta
 date: "2020-09-19"
-description: Dungeons & Dragons is more than a game for me.
+description: Stella Nauta represents the genesis of a new way of harnessing and exercising my creativity. 
 ---
 
 Stella Nauta represents the genesis of a new way of harnessing and exercising my creativity. This was the first major creative undertaking that I embarked on after committing to daily creative work. It's really incredible what you can accomplish with just a little bit of time every day.
